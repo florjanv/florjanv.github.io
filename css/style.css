@@ -1,0 +1,103 @@
+
+:root {
+    --teaGreen: #D4E4BC;
+    --pewterBlue: #96ACB7;
+    --mnBlue: #36558F;
+    --darkBlue: #40376E;
+    --darkPurple: #48233C;
+  }
+
+html, body { 
+    height: 100%; 
+}
+.mainColor{
+    color: var(--darkBlue);
+}
+.secondaryColor {
+    color: var(--teaGreen);
+}
+.thirdColor{
+    color: var(--darkPurple);
+}
+.pheasesColor{
+    color: var(--mnBlue);
+    font-style: italic;
+}
+.btn{
+    background-color: var(--darkBlue);
+}
+.progress-bar{
+    background-color: var(--darkPurple);
+    color: var(--teaGreen);
+}
+.progress-bar-singular{
+    background-color: var(--darkBlue);
+    color: var(--teaGreen);
+}
+.progress-bar-plural{
+    background-color: var(--mnBlue);
+    color: var(--teaGreen);
+}
+/* Experience style */
+.exp-box .box {
+    background: var(--pewterBlue);
+    border-radius: 10px; 
+    padding: 40px 10px;
+    margin: 20px 0px;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+.exp-box .listItems{
+    background: var(--pewterBlue);
+}
+
+.exp-box .box:hover{
+   box-shadow: 0 0 8px var(--darkPurple);
+}
+
+.exp-box .box .box-text{
+    margin:20px 0px;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.titleExp{
+    color: var(--darkPurple);
+}
+.date{
+    color: var(--mnBlue);
+}
+.location{
+    color: var(--mnBlue);
+}
+.employeExp{
+    color: var(--darkBlue);
+}
+
+/* Quick contact */
+.contact a{-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;border-radius:2px;display:block;background-color:var(--darkPurple);font-size:15px;text-align:center;color:rgb(255, 255, 255);padding:2px}
+.contact a:hover{background-color:var(--teaGreen);text-decoration:none}
+.contact a.skype:hover,.fa-skype{color:#00aff0}
+.contact a.overflow:hover,.fa-stack-overflow{color:#dd4b39}
+.contact a.linkedin:hover,.fa-linkedin{color:#0e76a8}
+.contact a.github:hover,.fa-github{color:#000000}
+
+/*Contacts icons */
+.address i{
+    color: var(--darkPurple);
+ }
+ .address p{
+    color: var(--darkPurple);
+ }
+
+ .skillsLinks{
+    color: var(--darkPurple);
+ }
+ /* #contact-container:hover{
+    box-shadow: 0 0 8px var(--darkPurple);
+ } */
+
+ #map { 
+     height: 400px;
+     width: 100%;
+}
