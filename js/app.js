@@ -120,13 +120,13 @@ function sortArrayOfObjects(arrayToSort, key) {
 
 // Lets create the map
 
-var map = L.map('map').setView([61.3284, -5.3215], 5);
+var map = L.map('map').setView([55.3284, -5.3215], 5);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-L.marker([51.3284, 1.8181]).addTo(map)
+L.marker([51.3284, -1.8181]).addTo(map)
     .bindPopup('Im here.')
     .openPopup();
 
