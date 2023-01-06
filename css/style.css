@@ -3,6 +3,13 @@
     --color2: #DBE2EF;
     --color3: #3F72AF;
 }
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+  }
 
 .hero{
     background-color: var(--color2);
