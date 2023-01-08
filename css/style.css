@@ -28,6 +28,9 @@ body {
     margin-right: auto;
     width: 40%;
 }
+#profilePic:hover{
+    transform: scale(1.2);
+}
 .social{
     text-align: center;
 }
@@ -45,6 +48,13 @@ body {
 }
 div.box{
     background-color: var(--color1);
+}
+div.box-app{
+    background-color: var(--color2);
+}
+#app1:hover{
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 footer {
