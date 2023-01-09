@@ -13,5 +13,5 @@ function openTab(evt, tabName) {
   }
 
   function techDict(){
-    window.open('http://stackoverflow.com', '_blank');
+    window.open('https://florjanv.github.io/dict-al/', '_blank');
   }
