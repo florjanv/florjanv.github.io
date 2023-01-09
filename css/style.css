@@ -1,7 +1,9 @@
 :root {
-    --color1: #F9F7F7;
-    --color2: #DBE2EF;
-    --color3: #3F72AF;
+    --color1: #ffffff;
+    --color2: #d9d9d9;
+    --color3: #284b63;
+    --color4: #3c6e71;
+    --color5: #353535;
 }
 body {
     margin: 0;
@@ -10,6 +12,11 @@ body {
     min-width: 320px;
     min-height: 100vh;
   }
+
+*{
+    color: var(--color3) !important;
+}
+
 
 .hero{
     background-color: var(--color2);
