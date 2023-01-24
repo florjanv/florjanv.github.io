@@ -14,7 +14,7 @@ body {
   }
 
 *{
-    color: var(--color3) !important;
+    color: var(--color3);
 }
 
 
@@ -44,10 +44,22 @@ body {
 .fa-brands{
     font-size: 30px;
     color: var(--color3);
-    text-shadow: 2px 2px 10px var(--color3);
+    text-shadow: 2px 2px 10px var(--color4);
 }
-.fa-brands:hover {
-    color: var(--color3);
+i.fa-github:hover {
+    color: black;
+    transform: scale(1.5);
+}
+i.fa-stack-overflow:hover {
+    color: #F2740D;
+    transform: scale(1.5);
+}
+i.fa-linkedin:hover {
+    color: #0377B5;
+    transform: scale(1.5);
+}
+i.fa-facebook:hover {
+    color: #4867AA;
     transform: scale(1.5);
 }
 .social>a {
