@@ -17,7 +17,6 @@ body {
     color: var(--color3);
 }
 
-
 .hero{
     background-color: var(--color2);
 }
@@ -81,7 +80,6 @@ footer {
     background-color: var(--color1);
     height: 40px;
 }
-
 
 @media only screen and (max-width: 600px) {
     .name {
