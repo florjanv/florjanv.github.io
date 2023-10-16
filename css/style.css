@@ -21,6 +21,12 @@ body {
     background-color: var(--color2);
 }
 
+.maindiv{
+    text-align: center;
+    position: relative;
+    margin-left: 20%;
+    margin-right: 20%;
+}
 .name{
     text-align: center;
     margin: 0;
@@ -37,6 +43,11 @@ body {
 #profilePic:hover{
     transform: scale(1.2);
 }
+
+#map { 
+    height: 180px; 
+}
+
 .social{
     text-align: center;
 }
@@ -65,7 +76,7 @@ i.fa-facebook:hover {
     margin: 15px;
 }
 div.box{
-    background-color: var(--color1);
+    background-color:rgb(255,255,255,0.4);
 }
 div.box-app{
     background-color: var(--color2);

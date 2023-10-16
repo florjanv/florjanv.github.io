@@ -10,6 +10,8 @@
     <title>GIS/Geospatial Engineer - Florjan Vladi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
+    <link rel="stylesheet" href="css/bulma-timeline.min.css">
   </head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GX0GPPPWG"></script>
@@ -24,99 +26,81 @@
 
     <section class="hero is-fullheight">
       <div class="hero-body">
-        <div class="">
+        <div class="tile is-ancestor maindiv">
+          <div class="tile is-2"></div>
 
-
-          <div class="tile is-ancestor">
-            <div class="tile is-parent ">
-              <div class="tile is-child box"><!-- Applications-->
-                <p class="subtitle is-5">Simple is better than complex!</p>
-                <div class="columns">
-                  <div class="column">
-<!--                <div class="box box-app" id="app1" onclick="techDict()">
-                      <figure class="image is-128x128">
-                        <img src="assets/dictApp.png" alt="Placeholder image">
-                      </figure>
-                        <h6 class="subtitle is-6">Technical Dictionary English-Albanian</h6>
-                        <p class="subtitle is-7"><a>#bulma.io </a><a>#vue </a> <a>#fastAPI</a></p>
-                    </div> -->
+          <div class="tile is-8 is-vertical">
+            <div class="tile is-child box"><!-- Introduction-->
+              <div class="columns is-gapless">
+                <div class="column is-half">
+                  <div class="content location">
+                    <p><i class="fa-solid fa-location-dot"></i> Basingstoke, UK</p>
                   </div>
-                  <div class="column">
-                    <div class="box box-app">
-                      <p>Coming Soon...</p>
-                    </div>
-                  </div>
-                  <div class="column"></div>
                 </div>
-                <div class="columns"></div>
+                <div class="column">
+                  <div class="content name">
+                    <p class="title is-4">Florjan Vladi</p>
+                    <p class="subtitle is-6">@florjanv</p>
+                  </div>
+                </div>
+                <div class="column img">
+                  <figure class="image is-128x128">
+                    <img class="is-rounded" id='profilePic' src="https://media.licdn.com/dms/image/D4E03AQEvjNJ1_ik4zA/profile-displayphoto-shrink_800_800/0/1684164112729?e=1701907200&v=beta&t=NAEEADDBvCsAK7euNsIA6VKBA7KiNDUWmfRs9pOhkqI">
+                  </figure>
+                </div>
+              </div>
+              <div class="content" id="mainDescription">
+
               </div>
 
             </div>
-            <div class="tile is-6 is-vertical">
-              <div class="tile is-child box"><!-- Introduction-->
-                <div class="columns is-gapless">
-                  <div class="column is-half">
-                    <div class="content location">
-                      <p><i class="fa-solid fa-location-dot"></i> Basingstoke, UK</p>
-                    </div>
-                  </div>
-                  <div class="column">
-                    <div class="content name">
-                      <p class="title is-4">Florjan Vladi</p>
-                      <p class="subtitle is-6">@florjanv</p>
-                    </div>
-                  </div>
-                  <div class="column img">
-                    <figure class="image is-128x128">
-                      <img class="is-rounded" id='profilePic' src="https://media.licdn.com/dms/image/D4E03AQEvjNJ1_ik4zA/profile-displayphoto-shrink_800_800/0/1684164112729?e=1701907200&v=beta&t=NAEEADDBvCsAK7euNsIA6VKBA7KiNDUWmfRs9pOhkqI">
-                    </figure>
-                  </div>
-                </div>
-                <div class="content">
-                  <p>GIS Expert with a long experience in the Geographic Information Systems GIS industry (Geomatics Engineering, Oil & Gas, Databases, Python automation and geodata processing). I'm a fast learner and a strong team player, and always open to learn new things. My personal interests include football, coding, biking and meeting new people.</p>
-                </div>
+            <div class="tile is-child box"> <!-- Technical skills-->
+              <div class="tabs is-centered">
+                <ul>
+                  <li class="tab is-active" onclick="openTab(event,'allSkills')"><a>Skills</a></li>
+                  <li class="tab" onclick="openTab(event,'allProjects')"><a>Projects </a></li>
+                  <li class="tab" onclick="openTab(event,'allContact')"><a>Contact</a></li>
+                </ul>
+                <hr>
               </div>
-              <div class="tile is-child box"> <!-- Technical skills-->
-                <div class="tabs">
-                  <ul>
-                    <li class="tab is-active" onclick="openTab(event,'gis')"><a>GIS</a></li>
-                    <li class="tab" onclick="openTab(event,'it')"><a>Databases+Programming </a></li>
-                    <li class="tab" onclick="openTab(event,'cart')"><a>Cartography</a></li>
-                  </ul>
-                  <hr>
-                </div>
-                <div class="container">
-                    <div id="gis" class="content-tab" >
-                      <p>Excellent geodata management, geospatial analysis and knowledge of GIS technologies:</p>
-                      <p> <i class="fa-solid fa-check"></i> Arcgis Enterprise\Online<br>
-                          <i class="fa-solid fa-check"></i> Arcgis Pro/Desktop<br>
-                          <i class="fa-solid fa-check"></i> Autocad Civil/Map 3D<br>
-                          <i class="fa-solid fa-check"></i> QGIS ...</p>
-                    </div>
-                    <div id="it" class="content-tab" style="display:none">
-                        <p>Using PODS standards and ESRI UPDM, I managed the engineering database for two pipeline projects (<strong>Trans Adriatic Pipeline</strong> and <strong>Southampton to London Pipeline</strong>).</p>
-                        <p>Excellent Python automation, mostly in the GIS industry. As well as a fundamental knowledge of JS, CSS, and HTML (front end). Some sample automation scripts may be found on my GitHub site. </p>
-                    </div>
-                    <div id="cart" class="content-tab" style="display:none">
-                      <p>Because of my expertise in Geomatics Engineering and my experience working with various teams, I have developed outstanding skills in making high-quality maps for many subjects.</p>
-                    </div>
-                </div>
-              </div>
-              <div class="tile is-child"><!-- Social buttons-->
-                <div class="social">
-                  <a href="https://github.com/florjanv" target="_blank"> <i class="fa-brands fa-github"></i></a>
-                  <a href="https://gis.meta.stackexchange.com/users/63649/riflo" target="_blank"> <i class="fa-brands fa-stack-overflow"></i></a>
-                  <a href="https://www.linkedin.com/in/florjan-vladi-24198953/" target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
-                  <a href="https://www.facebook.com/florjanvladi" target="_blank"> <i class="fa-brands fa-facebook"></i></a>
-                </div>
-              </div>
+              <div class="container">
+                  <div id="allSkills" class="content-tab" >
+                    <ul id="rdbms"> This will be populated by JS</ul><br>
+                    <div class="tags are-small is-centered" id="gis"> This will be populated by JS</div>
 
+                  </div>
+                  <div id="allProjects" class="content-tab" style="display:none;font-size: 12px;">
+
+                    <div class="timeline is-centered" id="timeline">
+
+                    </div>
+                    
+
+
+                  </div>
+                  <div class="content-tab" style="display:none" id="allContact">
+                    <div class="columns">
+                      <div class="column is-two-fifths">
+                        <ul id="contact"> This will be populated by JS</ul><br>
+                      </div>
+                      <div class="column">
+                        <div id="map"></div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="tile is-child"><!-- Social buttons-->
+              <div class="social">
+                <a href="https://github.com/florjanv" target="_blank"> <i class="fa-brands fa-github"></i></a>
+                <a href="https://gis.meta.stackexchange.com/users/63649/riflo" target="_blank"> <i class="fa-brands fa-stack-overflow"></i></a>
+                <a href="https://www.linkedin.com/in/florjan-vladi-24198953/" target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/florjanvladi" target="_blank"> <i class="fa-brands fa-facebook"></i></a>
+              </div>
             </div>
 
           </div>
-
-
-
+          <div class="tile is-2"></div>
         </div>
       </div>
       <footer class="has-text-centered is-flex-align-items-flex-end mt-auto">
@@ -128,8 +112,8 @@
       </footer>
 
     </section>
-
-
+    <script src="/node_modules/bulma-extensions/bulma-calendar/dist/bulma-calendar.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="crossorigin=""></script>
     <script src="js/app.js"></script>
   </body>
 </html>
