@@ -166,7 +166,7 @@ for (var key in projects) {
           <div class="timeline-marker is-primary"></div>
           <div class="timeline-content">
             <p class="heading">${curDateFrom} - ${curDateTo}    <i class="fa-solid fa-location-dot"></i> ${curLocation}</p>
-            <p>${curPosition} of  <a href="${curLink}" target="_blank">${curComp}</a> </p>
+            <p>${curPosition} at  <a href="${curLink}" target="_blank">${curComp}</a> </p>
             <p>${curDesc}</p>
           </div>
         </div>
