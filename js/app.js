@@ -37,13 +37,14 @@ var data = [{
       "Autocad Civil/Map 3D",
       "QGIS",
       "SQL",
-      "Python programming",
+      "Python Programming",
       "Basics in Front End (JS,CSS,HTML)",
-      "MS Office tools"
+      "MS Office tools",
+      "Project Management"
   ],
   "prog_rdbms":[
       "Using PODS standards and ESRI UPDM, I managed the engineering database for two pipeline projects (Trans Adriatic Pipeline and Southampton to London Pipeline).",
-      "Excellent Python automation, mostly in the GIS industry. As well as a fundamental knowledge of JS, CSS, and HTML (front end). Some sample automation scripts may be found on my GitHub site.",
+      "Excellent Python automation, mostly in the GIS industry. As well as fundamental knowledge of JS, CSS, and HTML (front end). Some sample automation scripts may be found on my GitHub site.",
       "Because of my expertise in Geomatics Engineering and my experience working with various teams, I have developed outstanding skills in making high-quality maps,charts and visualizations for many subjects."
   ],
   "projects":{
