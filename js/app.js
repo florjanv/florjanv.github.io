@@ -10,11 +10,13 @@ function openTab(evt, tabName) {
     }
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " is-active";
+    //timeout is set to load the map correctly inside modal
+    setTimeout(function() {
+          map.invalidateSize();
+    }, 1);
   }
 
-  function techDict(){
-    window.open('https://florjanv.github.io/dict-al/', '_blank');
-  }
+
 
 //adding information into a json variable, so i can update the json for updating the cv
 
@@ -56,7 +58,7 @@ var data = [{
           "desc":"Demonstrated exceptional skills in the design office, by assisting various teams and managing the collected information of a 95km 12inch pipeline. Saving significant costs by daily checks of construction operations, and changing the technology to the ArcGIS Online platform."
       },
       "abkons":{
-          "name":"Trans Adriatic Pipeline (Land Easement and Acquisition, Environmental and Archaeologicalmonitoring, Permitting, Census). Forestry Management Plan of several Municipalities of Albania. Bajgora Wind Farm, Kosovo. Photovoltaic power station -Karavasta-, Albania.",
+          "name":"Trans Adriatic Pipeline, Forestry Management Plan, Wind Farm, Photovoltaic Park etc...",
           "location":"Albania",
           "company":"ABKONS",
           "position":"GIS Consultant",
@@ -140,6 +142,7 @@ var curDateTo ="";
 var curLink ="";
 var curDesc ="";
 var curLocation ="";
+var curName ="";
 
 for (var key in projects) {
   // skip loop if the property is from prototype
@@ -156,6 +159,7 @@ for (var key in projects) {
       curLink=obj["link"];
       curDesc=obj["desc"];
       curLocation=obj["location"];
+      curName=obj["name"];
       // your code
   }
   projectHTML += `
@@ -167,6 +171,7 @@ for (var key in projects) {
           <div class="timeline-content">
             <p class="heading">${curDateFrom} - ${curDateTo}    <i class="fa-solid fa-location-dot"></i> ${curLocation}</p>
             <p>${curPosition} at  <a href="${curLink}" target="_blank">${curComp}</a> </p>
+            <p><strong>${curName}</strong></p>
             <p>${curDesc}</p>
           </div>
         </div>
@@ -192,3 +197,17 @@ function addContact(){
   `;
   document.getElementById("contact").innerHTML = contactCode;
 };
+
+
+
+//------------------------map location----------------------
+
+const map = L.map('map').setView([51.267, -1.088], 7);
+
+const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+const marker = L.marker([51.267, -1.088]).addTo(map)
+    .bindPopup('I live here.');
