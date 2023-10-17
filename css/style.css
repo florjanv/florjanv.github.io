@@ -32,6 +32,7 @@ body {
     margin: 0;
     position: relative;
     top: 40%;
+    right: 10%;
 }
 
 .img {
@@ -42,10 +43,6 @@ body {
 }
 #profilePic:hover{
     transform: scale(1.2);
-}
-
-#map { 
-    height: 200px; 
 }
 
 .social{
@@ -98,6 +95,6 @@ footer {
         margin: 0;
         position: relative;
         bottom: -80px;
-        left: 20px;
+        left: 80px;
     }
   }
