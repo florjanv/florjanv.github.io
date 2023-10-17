@@ -71,7 +71,7 @@ var data = [{
           "name":"Trans Adriatic Pipeline (Greece and Albania)",
           "location":"Albania",
           "company":"Spiecapag",
-          "position":"GIS Consultant",
+          "position":"GIS Consultant (part-time)",
           "link":"https://www.spiecapag.com/",
           "from":"05-2017",
           "to":"04-2021",
