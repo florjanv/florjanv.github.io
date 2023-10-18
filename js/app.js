@@ -86,7 +86,7 @@ var data = [{
           "link":"https://www.mb.gov.al",
           "from":"07-2011",
           "to":"04-2015",
-          "desc":"Specialist in a government institution responsible for managing the National System of Address of Albania. GIS web application developed using ESRI platform and database managed by SLQ server."
+          "desc":"Specialist in a government institution responsible for managing the National System of Address of Albania. GIS web application developed using ESRI platform and database managed by SQL server."
       },
       "osce":{
           "name":"Albania's Modernisation of Civil Registration System and Addresses",
