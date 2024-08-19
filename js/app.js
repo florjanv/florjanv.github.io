@@ -22,8 +22,8 @@ function openTab(evt, tabName) {
 
 var data = [{
   "profile":{
-      "desc":"I am a seasoned expert in geo-data management, mapping, spatial analysis, and automation. With aproven track record in national and international engineering projects, I excel in precise data collection, insightful mapping, and efficient spatial analysis, utilizing advanced technology and programming skills to automate processes and ensure project success.",
-      "address":"Basingstoke, UK",
+      "desc":"I am a seasoned expert in geo-data management, mapping, spatial analysis, and automation. With proven track record in national and international engineering projects, I excel in precise data collection, insightful mapping, and efficient spatial analysis, utilizing advanced technology and programming skills to automate processes and ensure project success.",
+      "address":"Tirana, AL",
       "phone":"+447716083903",
       "email":"florjanvladi@gmail.com",
       "linkedin":"https://www.linkedin.com/in/florjan-vladi-24198953/",
@@ -203,12 +203,12 @@ function addContact(){
 
 //------------------------map location----------------------
 
-const map = L.map('map').setView([51.267, -1.088], 7);
+const map = L.map('map').setView([41.3281, 19.8180], 7);
 
 const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-const marker = L.marker([51.267, -1.088]).addTo(map)
+const marker = L.marker([41.3281, 19.8180]).addTo(map)
     .bindPopup('I live here.');
