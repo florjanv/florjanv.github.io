@@ -55,7 +55,7 @@ var data = [{
           "position":"GIS Engineer",
           "link":"https://www.spiecapag.com/",
           "from":"08-2021",
-          "to":"present",
+          "to":"07-2024",
           "desc":"Demonstrated exceptional skills in the design office, by assisting various teams and managing the collected information of a 95km 12inch pipeline. Saving significant costs by daily checks of construction operations, and changing the technology to the ArcGIS Online platform."
       },
       "abkons":{
