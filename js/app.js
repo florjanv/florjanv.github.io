@@ -24,7 +24,7 @@ var data = [{
   "profile":{
       "desc":"I am a seasoned expert in geo-data management, mapping, spatial analysis, and automation. With proven track record in national and international engineering projects, I excel in precise data collection, insightful mapping, and efficient spatial analysis, utilizing advanced technology and programming skills to automate processes and ensure project success.",
       "address":"Tirana, AL",
-      "phone":"+447716083903",
+      "phone":"+447851501715",
       "email":"florjanvladi@gmail.com",
       "linkedin":"https://www.linkedin.com/in/florjan-vladi-24198953/",
       "facebook":"https://www.facebook.com/florjanvladi",
