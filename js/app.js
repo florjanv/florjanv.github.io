@@ -23,7 +23,7 @@ function openTab(evt, tabName) {
 var data = [{
   "profile":{
       "desc":"I am a seasoned expert in geo-data management, mapping, spatial analysis, and automation. With proven track record in national and international engineering projects, I excel in precise data collection, insightful mapping, and efficient spatial analysis, utilizing advanced technology and programming skills to automate processes and ensure project success.",
-      "address":"Tirana, AL",
+      "address":"Aberdeenshire, Scotland",
       "phone":"+447851501715",
       "email":"florjanvladi@gmail.com",
       "linkedin":"https://www.linkedin.com/in/florjan-vladi-24198953/",
@@ -203,7 +203,7 @@ function addContact(){
 
 //------------------------map location----------------------
 
-const map = L.map('map').setView([41.3281, 19.8180], 7);
+const map = L.map('map').setView([57.504479, -1.784585], 7);
 
 const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
