@@ -1,100 +1,135 @@
 :root {
-    --color1: #ffffff;
-    --color2: #d9d9d9;
-    --color3: #284b63;
-    --color4: #3c6e71;
-    --color5: #353535;
+  --color1: #ffffff;
+  --color2: #d9d9d9;
+  --color3: #284b63;
+  --color4: #3c6e71;
+  --color5: #353535;
 }
+
 body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-  }
-
-*{
-    color: var(--color3);
+  color: var(--color3);
+  background-color: var(--color2);
 }
 
-.hero{
-    background-color: var(--color2);
+/* Debugging Styles 
+* {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+}  */
+  
+
+/* Loading Spinner */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
-.maindiv{
-    text-align: center;
-    position: relative;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-.name{
-    text-align: center;
-    margin: 0;
-    position: relative;
-    top: 40%;
-    right: 10%;
+.spinner {
+  border: 4px solid var(--color2);
+  border-top: 4px solid var(--color3);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
 }
 
-.img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
-}
-#profilePic:hover{
-    transform: scale(1.2);
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-.social{
-    text-align: center;
-}
-.fa-brands{
-    font-size: 30px;
-    color: var(--color3);
-    text-shadow: 2px 2px 10px var(--color4);
-}
-i.fa-github:hover {
-    color: black;
-    transform: scale(1.5);
-}
-i.fa-stack-overflow:hover {
-    color: #F2740D;
-    transform: scale(1.5);
-}
-i.fa-linkedin:hover {
-    color: #0377B5;
-    transform: scale(1.5);
-}
-i.fa-facebook:hover {
-    color: #4867AA;
-    transform: scale(1.5);
-}
-.social>a {
-    margin: 15px;
-}
-div.box{
-    background-color:rgb(255,255,255,0.4);
-}
-div.box-app{
-    background-color: var(--color2);
-}
-#app1:hover{
-    transform: scale(1.05);
-    cursor: pointer;
+.box {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  padding: 1.5rem;
 }
 
-footer {
-    position: flex;
-    background-color: var(--color1);
-    height: 40px;
+.hidden {
+  display: none !important;
 }
 
-@media only screen and (max-width: 600px) {
-    .name {
-        text-align: center;
-        margin: 0;
-        position: relative;
-        bottom: -80px;
-        left: 80px;
-    }
-  }
+#profilePic {
+  transition: transform 0.3s ease;
+}
+
+#profilePic:hover {
+  transform: scale(1.2);
+}
+
+.social-link {
+  font-size: 30px;
+  color: var(--color3);
+  text-shadow: 2px 2px 10px var(--color4);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.5);
+}
+
+.fa-github:hover {
+  color: black;
+}
+
+.fa-stack-overflow:hover {
+  color: #F2740D;
+}
+
+.fa-linkedin:hover {
+  color: #0377B5;
+}
+
+.fa-facebook:hover {
+  color: #4867AA;
+}
+
+.tab-button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  color: var(--color3);
+}
+
+.tab-button.active {
+  border-bottom-color: var(--color3);
+  font-weight: bold;
+}
+
+.tab-button:hover {
+  border-bottom-color: var(--color4);
+}
+
+.tab-content {
+  min-height: 300px;
+  display: block !important;
+}
+
+.tab-content[style*="display: none"] {
+  display: none !important;
+}
+
+#map {
+  width: 100%;
+  height: 180px;
+}
+
+
+li:hover {
+  transform: translateY(-2px);
+  transition: 0.2s ease;
+}
+
+.inline-block:hover {
+  transform: translateY(-2px);
+  transition: 0.2s ease;
+}
