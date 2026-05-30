@@ -1,28 +1,41 @@
+
 function openTab(evt, tabName) {
-    var i, x, tablinks;
-    x = document.getElementsByClassName("content-tab");
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tab");
-    for (i = 0; i < x.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" is-active", "");
-    }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " is-active";
-    //timeout is set to load the map correctly inside modal
-    setTimeout(function() {
-          map.invalidateSize();
-    }, 1);
+  var i, x, tablinks;
+  // Hide all tab contents using inline style
+  x = document.getElementsByClassName("content-tab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
   }
+  // Remove active class from all tab buttons
+  tablinks = document.getElementsByClassName("tab-button");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
+  // Show current tab and mark button as active
+  document.getElementById(tabName).style.display = "";
+  evt.currentTarget.classList.add("active");
+  // Timeout is set to load the map correctly inside modal
+  setTimeout(function() {
+    if (typeof map !== 'undefined' && map) map.invalidateSize();
+  }, 1);
+}
 
 
 
 //adding information into a json variable, so i can update the json for updating the cv
 
+// Loading function
+function showLoader() {
+  document.getElementById('loadingOverlay').style.display = 'flex';
+}
+
+function hideLoader() {
+  document.getElementById('loadingOverlay').style.display = 'none';
+}
+
 var data = [{
   "profile":{
-      "desc":"I am a seasoned expert in geo-data management, mapping, spatial analysis, and automation. With proven track record in national and international engineering projects, I excel in precise data collection, insightful mapping, and efficient spatial analysis, utilizing advanced technology and programming skills to automate processes and ensure project success.",
+      "desc":"As a GIS Engineer at Spiecapag, I bring over a decade of experience in geomatics and GIS to design, manage, and optimize pipeline geospatial data for the Southampton to London Pipeline Project (and Trans Adriatic Pipeline). I collaborate with multidisciplinary teams to ensure data quality and accuracy, while using ArcGIS Online to improve efficiency and reduce operational costs. Python and SQL play a key role in automating workflows and managing geo-data throughout the project lifecycle. Previously, as a GIS Consultant at Abkons, I delivered geospatial analysis, mapping, and automation solutions for major projects including the Trans Adriatic Pipeline, forestry management plans, wind farms, and photovoltaic parks. I was recognized as a key expert, providing valuable insights for complex engineering projects. Outside of work, I enjoy football, coding, and meeting new people.",
       "address":"Aberdeenshire, Scotland",
       "phone":"+447851501715",
       "email":"florjanvladi@gmail.com",
@@ -108,8 +121,15 @@ addParagraph(data[0]["profile"]["desc"],"mainDescription");
 function addParagraph(info,idToUpdate) {
   const elem = document.getElementById(idToUpdate);
   const addP = document.createElement("p");
-  const addText = document.createTextNode(info);
-  addP.appendChild(addText);
+  const addText1 = document.createTextNode(info.slice(0, 382));
+  const addText2 = document.createTextNode(info.slice(382, 820));
+  const addText3 = document.createTextNode(info.slice(820));
+  addP.appendChild(addText1);
+  addP.appendChild(document.createElement("br"));
+  addP.appendChild(addText2);
+  addP.appendChild(document.createElement("br"));
+  addP.appendChild(document.createElement("br"));
+  addP.appendChild(addText3);
   elem.appendChild(addP);
 };
 
@@ -121,10 +141,10 @@ function addSkills(gis,rdbms,idGis,idRDBMS){
   var rdbmsCode ="";
 
   for (var i=0;i<gis.length;i++){
-    gisCode += `<span class="tag is-light" style="background-color: var(--color2);"> <i class="fa-solid fa-check"> </i> ${gis[i]} </span>`;
+    gisCode += `<span class="inline-block bg-gray-300 px-3 py-1 rounded text-sm"><i class="fa-solid fa-check-double"></i> ${gis[i]}</span>`;
   }
   for (var i=0;i<rdbms.length;i++){
-    rdbmsCode += `<li style="font-size: 14px;"> <i class="fa-solid fa-circle fa-2xs"></i> ${rdbms[i]}</li>`;
+    rdbmsCode += `<li class="text-sm"><i class="fa-solid fa-angles-right"></i> ${rdbms[i]}</li>`;
   }
 
   document.getElementById(idGis).innerHTML = gisCode;
@@ -132,7 +152,7 @@ function addSkills(gis,rdbms,idGis,idRDBMS){
 };
 
 //--------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------
+
 //modifying the DOM for projects
 var projects = data[0]["projects"];
 var projectHTML = "";
@@ -145,56 +165,74 @@ var curDesc ="";
 var curLocation ="";
 var curName ="";
 
+index = 1;
+projectHTML += `<ul class="timeline timeline-compact timeline-vertical" >`;
 for (var key in projects) {
-  // skip loop if the property is from prototype
   if (!projects.hasOwnProperty(key)) continue;
-
   var obj = projects[key];
-  for (var prop in obj) {
-      // skip loop if the property is from prototype
-      if (!obj.hasOwnProperty(prop)) continue;
-      curPosition = obj["position"];
-      curComp = obj["company"];
-      curDateFrom =obj["from"];
-      curDateTo=obj["to"];
-      curLink=obj["link"];
-      curDesc=obj["desc"];
-      curLocation=obj["location"];
-      curName=obj["name"];
-      // your code
-  }
-  projectHTML += `
-        <header class="timeline-header">
-          <span class="tag is-primary">${curDateTo}</span>
-        </header>
-        <div class="timeline-item is-primary">
-          <div class="timeline-marker is-primary"></div>
-          <div class="timeline-content">
-            <p class="heading">${curDateFrom} - ${curDateTo}    <i class="fa-solid fa-location-dot"></i> ${curLocation}</p>
-            <p>${curPosition} at  <a href="${curLink}" target="_blank">${curComp}</a> </p>
-            <p><strong>${curName}</strong></p>
-            <p>${curDesc}</p>
-          </div>
+  curPosition = obj["position"];
+  curComp = obj["company"];
+  curDateFrom = obj["from"];
+  curDateTo = obj["to"];
+  curLink = obj["link"];
+  curDesc = obj["desc"];
+  curLocation = obj["location"];
+  curName = obj["name"];
+
+  if (index == 1) {
+    projectHTML += `
+    <li>
+        <div class="timeline-start text-end mr-4 ">
+          <div class="text-sm lato-light-italic">${curDateTo}</div>
         </div>
-  `;
+        <div class="timeline-middle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" transform="rotate(0)">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="timeline-end ml-4">
+          <p class="text-m playfair-black-1">${curPosition} at <a href="${curLink}" target="_blank" class="text-blue-600 hover:underline">${curComp}</a></p>
+          <p class="lato-regular text-sm">${curDesc}</p>
+        </div>
+      <hr />
+    </li>
+    `;
+  }
+  else {
+    projectHTML += `
+    <li>
+      <hr />
+        <div class="timeline-start text-end mr-4 ">
+              <div class="text-sm lato-light-italic">${curDateTo}</div>
+        </div>
+        <div class="timeline-middle">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" transform="rotate(0)">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="timeline-end ml-4">
+          <p class="text-m playfair-black-1">${curPosition} at <a href="${curLink}" target="_blank" class="text-blue-600 hover:underline">${curComp}</a></p>
+          <p class="lato-regular text-sm">${curDesc}</p>
+        </div>
+      <hr />
+    </li>
+    `;
+  }
+index++;
 }
-document.getElementById("timeline").innerHTML = projectHTML;
-
-
-
-
-
+projectHTML += `</ul>`;
+document.getElementById("allProjects").innerHTML = projectHTML;
 //--------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------
+
 
 //modifying the DOM for contacts
 addContact()
 function addContact(){
   var contactCode = "";
   contactCode = `
-      <li><i class="fa-solid fa-location-dot"></i> ${data[0]["profile"]["address"]}</li>
-      <li><a href="mailto:${data[0]["profile"]["email"]}"> <i class="fa-solid fa-at"></i> </a> ${data[0]["profile"]["email"]}</li>
-      <li><a href="https://wa.me/${data[0]["profile"]["phone"]}"><i class="fa-solid fa-square-phone"></i></a> ${data[0]["profile"]["phone"]}</li>
+      <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot" style="color: var(--color5);"></i> <span>${data[0]["profile"]["address"]}</span></li>
+      <li class="flex items-center gap-2"><a href="mailto:${data[0]["profile"]["email"]}" class="hover:underline" style="color: var(--color5);"> <i class="fa-solid fa-at"></i></a> <span>${data[0]["profile"]["email"]}</span></li>
+      <li class="flex items-center gap-2"><a href="https://wa.me/${data[0]["profile"]["phone"]}" class="hover:underline" style="color: var(--color5);"><i class="fa-solid fa-square-phone"></i></a> <span>${data[0]["profile"]["phone"]}</span></li>
   `;
   document.getElementById("contact").innerHTML = contactCode;
 };
