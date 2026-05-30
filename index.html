@@ -1,125 +1,152 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="Keywords" CONTENT="Florjan Vladi, Florian Vladi, Vladi, Florjan, Florjanv, GIS Albania, GIS Expert in Albania, GIS Expert, GIS Analyst, GIS Consultant, Python Albania, Python expert in Albania ">
     <meta name="description" content="GIS/Geospatial Engineer portfolio of Florjan Vladi. Expertise in GIS, Python, spatial analysis, and geospatial solutions.">
-	  <meta name="author" content="Florjan Vladi">
-	  <link rel="canonical" href="https://florjanv.github.io/">
+    <meta name="author" content="Florjan Vladi">
+    <link rel="canonical" href="https://florjanv.github.io/">
 
-    <link rel="stylesheet" href="css/style.css">
     <title>GIS/Geospatial Engineer - Florjan Vladi</title>
-	  <link rel="icon" href="assets/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="css/bulma-timeline.min.css">
+    <link rel="icon" href="assets/favicon.ico">
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />    
+    
+
+    <!-- google fonts used -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <!-- my custom css -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/fonts.css" rel="stylesheet" />
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2GX0GPPPWG"></script>
     <script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-2GX0GPPPWG');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2GX0GPPPWG');
     </script>
   </head>
-  <body>
+  <body class="w-full flex flex-col items-center justify-start">
+    <!-- Loading Spinner -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+      <div class="spinner"></div>
+    </div>
 
-    <section class="hero is-fullheight">
-      <div class="hero-body">
-        <div class="tile is-ancestor maindiv">
-          <div class="tile is-3"></div>
-
-          <div class="tile is-6 is-vertical">
-            <div class="tile is-child box"><!-- Introduction-->
-              <div class="columns is-gapless">
-                <div class="column is-quater">
-                  <div class="content location">
-                    <p style="font-size: 12px;"><i class="fa-solid fa-location-dot"></i> Aberdeenshire, Scotland</p>
-                  </div>
-                </div>
-                <div class="column">
-                  <div class="content name">
-                    <p class="title is-4">Florjan Vladi</p>
-                    <p class="subtitle is-6">@florjanv</p>
-                  </div>
-                </div>
-                <div class="column img">
-                  <figure class="image is-128x128">
-                    <img class="is-rounded" id='profilePic' src="assets/1684164113234.jfif">
-                  </figure>
-                </div>
-              </div>
-              <div class="content" id="mainDescription">
-
-              </div>
-
-            </div>
-            <div class="tile is-child box"> <!-- Technical skills-->
-              <div class="tabs is-centered">
-                <ul>
-                  <li class="tab is-active" onclick="openTab(event,'allSkills')"><a>Skills</a></li>
-                  <li class="tab" onclick="openTab(event,'allProjects')"><a>Projects </a></li>
-                  <li class="tab" onclick="openTab(event,'allContact')"><a>Contact</a></li>
-                </ul>
-                <hr>
-              </div>
-              <div class="container">
-                  <div id="allSkills" class="content-tab" >
-                    <ul id="rdbms"> This will be populated by JS</ul><br>
-                    <div class="tags are-small is-centered" id="gis"> This will be populated by JS</div>
-
-                  </div>
-                  <div id="allProjects" class="content-tab" style="display:none;font-size: 14px;">
-
-                    <div class="timeline is-rtl" id="timeline">
-
-                    </div>
-                    
-
-
-                  </div>
-                  <div class="content-tab" style="display:none" id="allContact">
-                    <div class="columns">
-                      <div class="column is-two-fifths">
-                        <ul id="contact"> This will be populated by JS</ul><br>
-                      </div>
-                      <div class="column">
-                        <div id="map" style="height: 180px;">
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-            </div>
-            <div class="tile is-child"><!-- Social buttons-->
-              <div class="social">
-                <a href="https://github.com/florjanv" target="_blank"> <i class="fa-brands fa-github"></i></a>
-                <a href="https://gis.meta.stackexchange.com/users/63649/riflo" target="_blank"> <i class="fa-brands fa-stack-overflow"></i></a>
-                <a href="https://www.linkedin.com/in/florjan-vladi-24198953/" target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.facebook.com/florjanvladi" target="_blank"> <i class="fa-brands fa-facebook"></i></a>
-              </div>
+    <div class="w-full min-h-screen bg-gray-300 flex items-center justify-center py-8 px-4">
+      <div class="w-full max-w-2xl">
+        <!-- Main Content Box -->
+        <div class="box shadow-lg">
+          <!-- Profile Header -->
+          <div class="flex items-center gap-6 mb-6 pb-6 border-b-2 border-gray-300">
+            <!-- Profile Info -->
+            <div class="flex-1">
+              <p class="lato-light-italic text-sm mb-1 " style="color: var(--color5);"><i class="fas fa-location-dot"></i> Aberdeenshire, Scotland</p>
+              <h1 class="text-3xl playfair-black-italic-1" style="color: var(--color4);">Florjan Vladi</h1>
+              <p class="lato-light text-sm text-gray-600" style="color: var(--color5);">@florjanv</p>
             </div>
 
+            <!-- Profile Picture -->
+            <div class="flex-shrink-0">
+              <img id="profilePic" src="assets/1684164113234.jfif" alt="Florjan Vladi" class="w-32 h-32 mask mask-squircle object-cover">
+            </div>
           </div>
-          <div class="tile is-3"></div>
+
+          <!-- Tabs -->
+          <div class="flex border-b-2 border-gray-300 mb-6 overflow-x-auto">
+            <button class="tab-button active playfair-display-1" onclick="openTab(event,'allAbout')">About</button>
+            <button class="tab-button playfair-display-1" onclick="openTab(event,'allSkills')">Skills</button>
+            <button class="tab-button playfair-display-1" onclick="openTab(event,'allProjects')">Projects</button>
+            <button class="tab-button playfair-display-1" onclick="openTab(event,'allContact')">Contact</button>
+          </div>
+
+          <!-- Tab Content -->
+          <!-- About Tab -->
+          <div id="allAbout" class="tab-content content-tab">
+            <div id="mainDescription" class="lato-regular text-sm"></div>
+          </div>
+
+          <!-- Skills Tab -->
+          <div id="allSkills" class="tab-content content-tab" style="display: none;">
+            <div class="mb-6">
+              <h3 class="playfair-bold-1 mb-3">Core Competencies</h3>
+              <ul id="rdbms" class="space-y-2" class="lato-regular text-sm"></ul>
+            </div>
+            <div>
+              <h3 class="playfair-bold-1 mb-3">Technical Skills</h3>
+              <div id="gis" class="flex flex-wrap gap-2" class="lato-regular text-sm"></div>
+            </div>
+          </div>
+
+          <!-- Projects Tab -->
+          <div id="allProjects" class="tab-content content-tab" style="display: none;">
+            <!-- DaisyUI Vertical Timeline -->
+            
+          </div>
+
+          <!-- Contact Tab -->
+          <div id="allContact" class="tab-content content-tab" style="display: none;">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 class="playfair-bold-1 mb-3">Get in Touch</h3>
+                <ul id="contact" class="lato-regular space-y-3"></ul>
+              </div>
+              <div>
+                <h3 class="playfair-bold-1 mb-3">Location</h3>
+                <div id="map" class="rounded-lg overflow-hidden border border-gray-300 lato-regular"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex justify-center gap-6 mt-8">
+          <a href="https://github.com/florjanv" target="_blank" class="social-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://gis.meta.stackexchange.com/users/63649/riflo" target="_blank" class="social-link">
+            <i class="fab fa-stack-overflow"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/florjan-vladi-24198953/" target="_blank" class="social-link">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://www.facebook.com/florjanvladi" target="_blank" class="social-link">
+            <i class="fab fa-facebook"></i>
+          </a>
         </div>
       </div>
-      <footer class="has-text-centered is-flex-align-items-flex-end mt-auto">
-        <div class="content has-text-centered">
-          <p>
-            by <a href="https://github.com/florjanv">me</a>
-          </p>
-        </div>
-      </footer>
+    </div>
+      
+    <!-- Footer -->
+    <footer class="footer sm:footer-horizontal text-base-content p-4">
+      <table class="table">
+        <tr>
+          <td class="lato-light text-left">by <a href="https://github.com/florjanv" class="text-blue-600 hover:underline">me </a> using (js, html, tailwind, leaflet)</td>
+          <td class="lato-light text-right">Simple is better than complex!.</td>
+        </tr>
+      </table>
+    </footer>
 
-    </section>
+    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- App JS -->
     <script src="js/app.js"></script>
+    
   </body>
 </html>
