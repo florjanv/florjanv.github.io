@@ -133,3 +133,14 @@ li:hover {
   transform: translateY(-2px);
   transition: 0.2s ease;
 }
+
+.timelineProject hr{
+  background-color: var(--color3); 
+  height: 1px; 
+  border: 0;
+}
+
+.footer {
+  border: none;
+  background-color: var(--color2);
+}
