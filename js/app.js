@@ -181,17 +181,17 @@ for (var key in projects) {
 
   if (index == 1) {
     projectHTML += `
-    <li>
+    <li class="timelineProject">
         <div class="timeline-start text-end mr-4 ">
           <div class="text-sm lato-light-italic">${curDateTo}</div>
         </div>
         <div class="timeline-middle">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" transform="rotate(0)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" transform="rotate(0)" style="color: var(--color4)">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
           </svg>
         </div>
         <div class="timeline-end ml-4">
-          <p class="text-m playfair-black-1">${curPosition} at <a href="${curLink}" target="_blank" class="text-blue-600 hover:underline">${curComp}</a></p>
+          <p class="text-m playfair-bold-1">${curPosition} at <a href="${curLink}" target="_blank" class="hover:underline" style="color: var(--color5)">${curComp}</a></p>
           <p class="lato-regular text-sm">${curDesc}</p>
         </div>
       <hr />
@@ -200,18 +200,18 @@ for (var key in projects) {
   }
   else {
     projectHTML += `
-    <li>
+    <li class="timelineProject">
       <hr />
         <div class="timeline-start text-end mr-4 ">
               <div class="text-sm lato-light-italic">${curDateTo}</div>
         </div>
         <div class="timeline-middle">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" transform="rotate(0)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" transform="rotate(0)" style="color: var(--color4)">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
           </svg>
         </div>
         <div class="timeline-end ml-4">
-          <p class="text-m playfair-black-1">${curPosition} at <a href="${curLink}" target="_blank" class="text-blue-600 hover:underline">${curComp}</a></p>
+          <p class="text-m playfair-bold-1">${curPosition} at <a href="${curLink}" target="_blank" class="hover:underline" style="color: var(--color5)">${curComp}</a></p>
           <p class="lato-regular text-sm">${curDesc}</p>
         </div>
       <hr />
