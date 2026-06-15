@@ -37,7 +37,7 @@ var data = [{
   "profile":{
       "desc":"As a GIS Engineer at Spiecapag, I bring over a decade of experience in geomatics and GIS to design, manage, and optimize pipeline geospatial data for the Southampton to London Pipeline Project (and Trans Adriatic Pipeline). I collaborate with multidisciplinary teams to ensure data quality and accuracy, while using ArcGIS Online to improve efficiency and reduce operational costs. Python and SQL play a key role in automating workflows and managing geo-data throughout the project lifecycle. Previously, as a GIS Consultant at Abkons, I delivered geospatial analysis, mapping, and automation solutions for major projects including the Trans Adriatic Pipeline, forestry management plans, wind farms, and photovoltaic parks. I was recognized as a key expert, providing valuable insights for complex engineering projects. Outside of work, I enjoy football, coding, and meeting new people.",
       "address":"Aberdeenshire, Scotland",
-      "phone":"+447851501715",
+      "phone":"+447889135345",
       "email":"florjanvladi@gmail.com",
       "linkedin":"https://www.linkedin.com/in/florjan-vladi-24198953/",
       "facebook":"https://www.facebook.com/florjanvladi",
