@@ -248,5 +248,5 @@ const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-const marker = L.marker([54.080450, -0.189667]).addTo(map)
-    .bindPopup('Hey there!');
+//const marker = L.marker([54.080450, -0.189667]).addTo(map)
+//    .bindPopup('Hey there!');
