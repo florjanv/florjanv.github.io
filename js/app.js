@@ -241,12 +241,12 @@ function addContact(){
 
 //------------------------map location----------------------
 
-const map = L.map('map').setView([54.080450, -0.189667], 7);
+const map = L.map('map').setView([54.080450, -0.189667], 9);
 
 const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-const marker = L.marker([57.504479, -1.784585]).addTo(map)
+const marker = L.marker([54.080450, -0.189667]).addTo(map)
     .bindPopup('Hey there!');
