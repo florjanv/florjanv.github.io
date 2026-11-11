@@ -241,7 +241,7 @@ function addContact(){
 
 //------------------------map location----------------------
 
-const map = L.map('map').setView([54.080450, -0.189667], 9);
+const map = L.map('map').setView([54.080450, -0.189667], 5);
 
 const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
